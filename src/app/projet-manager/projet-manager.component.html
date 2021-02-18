@@ -1,0 +1,72 @@
+<ng-container *ngIf="role=='manager'">
+<div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        <h4>Affecter Projet User:</h4>
+          <form (ngSubmit)="onSubmit1(f)" #f="ngForm">
+            <div class="form-group">
+                <label for=projet>
+                  Projet
+                </label>
+                <select id="projet" class="form-control" name="projet" ngModel >
+                    <ng-container *ngFor="let manager of managers">
+                        <ng-container *ngIf="manager.login==username">
+                            <option></option>
+                            <option *ngFor="let pro of manager.projets">
+                                     {{pro.nom}} 
+                                </option>
+                            </ng-container>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for=users>
+                  Users
+                </label>
+                <select id="users" class="form-control" name="users" ngModel >
+                    <ng-container *ngFor="let manager of managers">
+                        <ng-container *ngIf="manager.login==username">
+                            <option></option>
+                            <option *ngFor="let user of manager.users">
+                                     {{user.nom}} {{user.prenom}} 
+                                </option>
+                            </ng-container>
+                    </ng-container>
+                </select>
+            </div>
+            <button class="btn btn-primary"  type="submit">Enregistrer</button>
+            <p *ngIf="invalid==true">ERREUR </p>
+          </form>
+        </div>
+      </div>
+    <br>
+
+          <h4>Projets:</h4>
+
+          <table class="redTable"   border="1">
+              <thead>
+              <tr>
+                <th>Projets</th>
+                <th>Users</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <ng-container *ngFor="let manager of managers">
+                          <ng-container *ngIf="manager.login==username">
+                              <tr *ngFor="let pro of manager.projets">
+                                      {{pro.nom}} 
+                                      <ng-container *ngFor="let projet of projets">
+                                          <ng-container *ngIf="projet.nom==pro.nom">
+                                              <td > <ng-container *ngFor="let use of projet.users">
+                                                  {{use.nom}} {{use.prenom}} <br></ng-container>
+                                              </td>
+                                          </ng-container>
+                                      </ng-container>
+                                  </tr>
+                              </ng-container>
+                  </ng-container>
+              </tbody>
+                </table>
+
+
+              
+</ng-container>

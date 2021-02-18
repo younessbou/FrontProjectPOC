@@ -1,0 +1,13 @@
+a{
+	font: italic small-caps bold 16px/2 cursive;
+}
+
+p{
+    margin-top: 7px;
+    margin-bottom: 0%;
+	font: italic small-caps bold 16px/2 cursive;
+}
+
+header{
+    margin-bottom: 10px;
+}

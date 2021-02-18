@@ -1,0 +1,60 @@
+<ng-container *ngIf="role=='manager'">
+
+
+<h4>Ajouter User:</h4>
+    
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+                <label for="nom">
+                  Nom:
+                </label><br>
+                <input type="text" id="nom" class="form-control" name="nom" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="prenom">
+                  Prenom:
+                </label><br>
+                <input type="text" id="prenom" class="form-control" name="prenom" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="login">
+                  Login:
+                </label><br>
+                <input type="text" id="login" class="form-control" name="login" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="password">
+                  Password:
+                </label><br>
+                <input type="password" id="password" class="form-control" name="password" ngModel>
+            </div>
+            <button class="btn btn-primary"  type="submit">Enregistrer</button>
+            <p *ngIf="invalid==true">ERREUR </p>
+          </form>
+        </div>
+      </div>
+<br>
+
+
+<h4>Users:</h4>
+<table class="redTable" border="1">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      </tr>
+    </thead>
+    <tbody>
+            <ng-container *ngFor="let manager of managers">
+                <ng-container *ngIf="manager.login==username">
+                    <ng-container *ngFor="let user of manager.users">
+                     <tr><td>{{user.nom}}</td> <td>{{user.prenom}}</td> </tr>
+            </ng-container>
+            </ng-container>
+            </ng-container>
+    </tbody>
+</table>
+
+</ng-container>

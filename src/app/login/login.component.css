@@ -1,0 +1,48 @@
+p{
+    color:red;
+    font-size: small;
+}
+
+div {
+    margin-top: 10%;
+    width: 50%;
+    height: 269px;
+    vertical-align: middle;
+    background: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+h1{
+    font-size: medium;
+    margin: 0 auto;
+    padding-bottom: 0px;
+    font: italic small-caps bold 16px/2 cursive;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #53af57;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font: italic small-caps bold 16px/2 cursive;
+}
+button:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+    text-align: center;
+}

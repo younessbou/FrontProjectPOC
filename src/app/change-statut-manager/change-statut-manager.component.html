@@ -1,0 +1,49 @@
+<ng-container *ngIf="role=='admin'">
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    <h4>Changer Statut Manager:</h4>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for=users>
+              Managers
+            </label>
+            <select id="users" class="form-control" name="users" ngModel >
+                        <option></option>
+                            <option *ngFor="let manager of managers">
+                            {{manager.nom}} {{manager.prenom}}  
+                            </option>
+            </select>
+        </div>
+        <button class="btn btn-primary"  type="submit">Nouvel Admin</button>
+        <p *ngIf="invalid==true">ERREUR </p>
+      </form>
+    </div>
+  </div>
+<br>
+
+<h4>Status Employés:</h4>
+
+            <table class="redTable"   border="1">
+              <thead>
+              <tr>
+                <th>Managers</th>
+                <th>Admin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>
+                        <ng-container *ngFor="let manager of managers">
+                            {{manager.nom}} {{manager.prenom}} <br>
+                        </ng-container>
+                    </td>
+                    <td>
+                        <ng-container *ngFor="let ad of admin">
+                            {{ad.nom}} {{ad.prenom}} <br>
+                        </ng-container>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+</ng-container>
+            

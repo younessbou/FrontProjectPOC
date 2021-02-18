@@ -1,0 +1,23 @@
+<ng-container *ngIf="role=='manager'">
+
+<h4>Temps Users:</h4>
+<table class="redTable" border="1">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Projet</th>
+      <th>Temps</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let times of managers">
+            <td >{{times.user.nom}} </td>
+            <td>{{times.user.prenom}}</td>
+            <td >{{times.projet.nom}}</td>
+            <td >{{times.nbhours}}</td>
+            </tr>
+    </tbody>
+      </table>
+
+</ng-container>

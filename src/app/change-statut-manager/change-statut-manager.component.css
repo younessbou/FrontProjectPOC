@@ -1,0 +1,87 @@
+
+p{
+    color: #cc0202;
+    font:  small-caps bold 25px cursive ;
+    text-align: center;
+
+}
+
+h4{
+    color: #A40808;;
+    font: italic small-caps bold 25px cursive;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+label{
+    color: #A40808;;
+    font: italic small-caps bold 20px cursive;
+}
+
+button {
+    background-color: #53af57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font: italic small-caps bold 16px/2 cursive;
+}
+button:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+    text-align: center;
+}
+
+table.redTable {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    border: 2px solid #A40808;
+    background-color: #EEE7DB;
+    width: 100%;
+    height: 28px;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  table.redTable td, table.redTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+  }
+  table.redTable tbody td {
+    font-size: 16px;
+  }
+  table.redTable tr:nth-child(even) {
+    background: #F5C8BF;
+  }
+  table.redTable thead {
+    background: #A40808;
+  }
+  table.redTable thead th {
+    font-size: 23px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #A40808;
+  }
+  table.redTable thead th:first-child {
+    border-left: none;
+  }
+  
+  table.redTable tfoot td {
+    font-size: 13px;
+  }
+  table.redTable tfoot .links {
+    text-align: right;
+  }
+  table.redTable tfoot .links a{
+    display: inline-block;
+    background: #FFFFFF;
+    color: #A40808;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }

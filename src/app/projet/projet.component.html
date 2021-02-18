@@ -1,0 +1,65 @@
+<ng-container *ngIf="role=='user'">
+<h4>Ajouter Temps:</h4>
+    
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+                <label for=id>
+                  Projet
+                </label>
+                <select id="id" class="form-control" name="id" ngModel >
+                  <ng-container *ngFor="let user of users">
+                    <ng-container *ngIf="user.login==username">
+                  <option *ngFor="let projet of user.projets" value={{projet.id}}>
+                    {{projet.nom}}
+                  </option>
+                  </ng-container>
+                </ng-container>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nbhours">
+                  Temps
+                </label>
+                <input type="number" id="nbhours" class="form-control" name="nbhours" ngModel>
+            </div>
+            <button class="btn btn-primary"  type="submit">Enregistrer</button>
+            <p *ngIf="invalid==true">ERREUR </p>
+          </form>
+        </div>
+      </div>
+    
+
+<br>
+
+<h4>Projets:</h4>
+
+<table class="redTable" border="1">
+    <thead>
+    <tr>
+      <th>Projet</th>
+      <th>Temps</th>
+      <th> Manager</th>
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container ng-container *ngFor="let user of users">
+            <ng-container *ngFor="let temps of user.tempss">
+                <tr ng-container *ngIf="user.login==username">
+                    <td>{{temps.projet.nom}}</td>
+                    <td>{{temps.nbhours}}</td>
+                    <ng-container *ngFor="let pro of user.projets">
+                        <ng-container *ngIf="pro.id==temps.projet.id">
+                            <td>{{pro.manager.nom}} {{pro.manager.prenom}}</td> 
+                        </ng-container>
+                    </ng-container>
+                </tr>
+            </ng-container>
+        </ng-container>
+    </tbody>
+      </table>
+    </ng-container>
+
+
+  
